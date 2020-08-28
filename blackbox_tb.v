@@ -4,7 +4,7 @@ module blackbox_test;
 
     wire u, q;  
 
-    blackbox(u, q, i, f);
+    blackbox b1(u, q, i, f);
 
     initial begin
 
