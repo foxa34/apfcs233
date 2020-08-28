@@ -8,16 +8,17 @@ module blackbox_test;
 
     initial begin
 
-    $dumpfile("bb.vcd");
-    $dumpvars(0, blackbox_test);
+        $dumpfile("bb.vcd");
+        $dumpvars(0, blackbox_test);
 
-    i = 0 f = 0; #10;
-    i = 0 f = 1; #10;
-    i = 1 f = 0; #10;
-    i = 1 f = 1; #10;
+        i = 0 f = 0; #10;
+        i = 0 f = 1; #10;
+        i = 1 f = 0; #10;
+        i = 1 f = 1; #10;
 
-    $display("test complete");
+        $display("test complete");
 
-    $finish;
+        $finish;
 
-end
+    end
+endmodule
