@@ -1,20 +1,24 @@
 module blackbox_test;
 
-    reg  i, f;
+    reg  q, i, f;
 
-    wire u, q;  
+    wire u;  
 
     blackbox b1(u, q, i, f);
 
     initial begin
 
-        $dumpfile("bb.vcd");
+        $dumpfile("blackbox.vcd");
         $dumpvars(0, blackbox_test);
 
-        i = 0; f = 0; #10;
-        i = 0; f = 1; #10;
-        i = 1; f = 0; #10;
-        i = 1; f = 1; #10;
+        q = 0; i = 0; f = 0; #10;
+        q = 0; i = 0; f = 1; #10;
+        q = 0; i = 1; f = 0; #10;
+        q = 0; i = 1; f = 1; #10;
+        q = 1; i = 0; f = 0; #10;
+        q = 1; i = 0; f = 1; #10;
+        q = 1; i = 1; f = 0; #10;
+        q = 1; i = 1; f = 1; #10;
 
         $display("test complete");
 
